@@ -1,0 +1,22 @@
+{% extends 'attendance/base.html' %}
+{% block content %}
+<h1>Attendance Report for {{ division }}</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Present</th>
+            <th>Absent</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in report_data %}
+        <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.present }}</td>
+            <td>{{ data.absent }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
